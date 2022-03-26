@@ -1,12 +1,16 @@
 import type { NextPage } from 'next'
+import { GetStaticProps } from 'next'
+
 import Head from 'next/head'
 
 import { Categories } from '../components/Categories'
 import { PostCard } from '../components/PostCard'
 import { PostWidget } from '../components/PostWidget'
-import { getPosts } from '../services'
+import { getPosts } from '../services/getPosts'
 
-const Home: NextPage = ({ posts }) => {
+import { Post } from '../types'
+
+const Home: NextPage<Post> = ({ posts }: Post) => {
   return (
     <div className="-px10 container mx-auto mb-8">
       <Head>
@@ -32,7 +36,7 @@ const Home: NextPage = ({ posts }) => {
 
 export default Home
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const posts = await getPosts()
 
   return {
