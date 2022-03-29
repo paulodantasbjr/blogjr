@@ -10,7 +10,7 @@ import { getPosts } from '../services/getPosts'
 
 const Home: NextPage = ({ posts }) => {
   return (
-    <div className="-px10 container mx-auto mb-8">
+    <div className="container mx-auto mb-8 px-10">
       <Head>
         <title>Blog Jr</title>
         <link rel="icon" href="/favicon.ico" />
@@ -33,6 +33,8 @@ const Home: NextPage = ({ posts }) => {
 }
 
 export default Home
+
+//ramom gay
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await getPosts()
