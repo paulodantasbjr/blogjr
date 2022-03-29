@@ -6,29 +6,25 @@ const graphqlAPI =
 export const getPosts = async () => {
   const query = gql`
     query getPosts {
-      postsConnection {
-        edges {
-          node {
-            author {
-              photo {
-                url
-              }
-              bio
-              name
-              id
-            }
-            slug
-            title
-            excerpt
-            featuredImage {
-              url
-            }
-            createdAt
-            categories {
-              name
-              slug
-            }
+      posts(){
+        author{
+          photo{
+            url
           }
+          bio
+          name
+          id
+        }
+        slug
+        title
+        excerpt
+        featuredImage {
+          url
+        }
+        createdAt
+        categories {
+          name
+          slug
         }
       }
     }
@@ -36,5 +32,5 @@ export const getPosts = async () => {
 
   const results = await request(graphqlAPI, query)
 
-  return results.postsConnection.edges
+  return results.posts
 }

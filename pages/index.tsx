@@ -8,9 +8,7 @@ import { PostCard } from '../components/PostCard'
 import { PostWidget } from '../components/PostWidget'
 import { getPosts } from '../services/getPosts'
 
-import { Post } from '../types'
-
-const Home: NextPage<Post> = ({ posts }: Post) => {
+const Home: NextPage = ({ posts }) => {
   return (
     <div className="-px10 container mx-auto mb-8">
       <Head>
@@ -20,7 +18,7 @@ const Home: NextPage<Post> = ({ posts }: Post) => {
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
         <div className="col-span-1 lg:col-span-8">
           {posts.map((posts, index) => (
-            <PostCard posts={posts.node} key={index} />
+            <PostCard posts={posts} key={index} />
           ))}
         </div>
         <div className="col-span-1 lg:col-span-4">
