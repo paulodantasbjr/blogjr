@@ -34,8 +34,6 @@ const Home: NextPage = ({ posts }) => {
 
 export default Home
 
-//ramom gay
-
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await getPosts()
 
