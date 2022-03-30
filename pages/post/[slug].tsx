@@ -15,8 +15,8 @@ const PostDetails: NextPage = ({ post }) => {
         <div className="col-span-1 lg:col-span-8">
           <PostDetail post={post} />
           <Author author={post.author} />
-          <CommentForm />
-          <Comments />
+          <CommentForm slug={post.slug} />
+          <Comments slug={post.slug} />
         </div>
         <div className="col-span-1 lg:col-span-4">
           <div className="relative top-8 lg:sticky">

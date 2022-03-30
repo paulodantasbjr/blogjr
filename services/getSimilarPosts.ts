@@ -1,6 +1,7 @@
 import { request, gql } from 'graphql-request'
 
-const graphqlAPI = process.env.APP_GRAPHQL_API
+const graphqlAPI =
+  'https://api-sa-east-1.graphcms.com/v2/cl10yafju1alq01z0dzltdtxa/master'
 
 export const getSimilarPosts = async (categories, slug) => {
   const query = gql`
