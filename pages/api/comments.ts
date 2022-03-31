@@ -6,8 +6,6 @@ const graphqlAPI =
   'https://api-sa-east-1.graphcms.com/v2/cl10yafju1alq01z0dzltdtxa/master'
 
 export default async function handlePostComment(req, res) {
-  console.log('cheguei')
-
   const graphQLClient = new GraphQLClient(graphqlAPI, {
     headers: {
       authorization: `Bearer ${GraphCMSToken}`,

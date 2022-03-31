@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { getCategories } from '../services/getCategories'
+import { CategoriesType } from '../types/Categories'
 
 export const Categories = () => {
-  const [categories, setCategories] = useState([])
+  const [categories, setCategories] = useState([] as CategoriesType[])
 
   useEffect(() => {
     getCategories().then((categories) => setCategories(categories))

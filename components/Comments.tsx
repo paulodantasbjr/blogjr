@@ -1,17 +1,17 @@
 import moment from 'moment'
 import { useState, useEffect } from 'react'
 import { getComments } from '../services/getComments'
+import { CommentsType } from '../types/Comments'
+import { SlugType } from '../types/Slug'
 
-export const Comments = ({ slug }) => {
-  const [comments, setComments] = useState([])
+export const Comments = ({ slug }: SlugType) => {
+  const [comments, setComments] = useState([] as CommentsType[])
 
   useEffect(() => {
     getComments(slug).then((res) => {
       setComments(res)
     })
   }, [slug])
-
-  console.log(comments)
 
   return (
     <>

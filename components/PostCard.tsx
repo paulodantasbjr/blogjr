@@ -5,7 +5,10 @@ import moment from 'moment'
 
 import { AiOutlineCalendar } from 'react-icons/ai'
 
-export const PostCard = ({ posts }) => {
+import { PostType } from '../types/Post'
+import { PostsType } from '../types/Posts'
+
+export const PostCard = ({ posts }: PostsType) => {
   return (
     <div className="mb-8 rounded-lg bg-white p-0 pb-12 shadow-lg lg:p-8">
       <div className="relative mb-6 overflow-hidden pb-80 shadow-md">

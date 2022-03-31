@@ -1,6 +1,8 @@
 import Image from 'next/image'
 
-export const Author = ({ author }) => {
+import { AuthorType } from '../types/Author'
+
+export const Author = ({ author }: AuthorType) => {
   return (
     <div className="relative mt-20 mb-8 rounded-lg bg-black bg-opacity-20 p-12 text-center">
       <div className="absolute left-0 right-0 -top-14">

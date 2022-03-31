@@ -1,9 +1,11 @@
-import { request, gql } from 'graphql-request'
+type commentOBJ = {
+  name: string
+  email: string
+  comment: string
+  slug: string
+}
 
-const graphqlAPI =
-  'https://api-sa-east-1.graphcms.com/v2/cl10yafju1alq01z0dzltdtxa/master'
-
-export const setPostComment = async (obj) => {
+export const setPostComment = async (obj: commentOBJ) => {
   const result = await fetch('/api/comments', {
     method: 'POST',
     headers: {

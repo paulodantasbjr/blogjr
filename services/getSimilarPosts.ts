@@ -1,9 +1,10 @@
 import { request, gql } from 'graphql-request'
 
-const graphqlAPI =
-  'https://api-sa-east-1.graphcms.com/v2/cl10yafju1alq01z0dzltdtxa/master'
+import { GRAPHQLAPI } from '../utils/constants'
 
-export const getSimilarPosts = async (categories, slug) => {
+const graphqlAPI = GRAPHQLAPI
+
+export const getSimilarPosts = async (categories: string, slug: string) => {
   const query = gql`
     query GetPostDetails($slug: String!, $categories: [String!]) {
       posts(

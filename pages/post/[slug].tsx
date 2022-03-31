@@ -1,4 +1,5 @@
 import { NextPage } from 'next'
+
 import { Author } from '../../components/Author'
 import { Categories } from '../../components/Categories'
 import { CommentForm } from '../../components/CommentForm'
@@ -20,7 +21,7 @@ const PostDetails: NextPage = ({ post }) => {
         </div>
         <div className="col-span-1 lg:col-span-4">
           <div className="relative top-8 lg:sticky">
-            <PostWidget />
+            <PostWidget categories={undefined} slug={} />
             <Categories />
           </div>
         </div>

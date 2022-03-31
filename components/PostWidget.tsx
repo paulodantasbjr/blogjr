@@ -4,9 +4,11 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { getRecentPosts } from '../services/getRecentPosts'
 import { getSimilarPosts } from '../services/getSimilarPosts'
+import { PostType } from '../types/Post'
+import { PostsType } from '../types/Posts'
 
 export const PostWidget = ({ categories, slug }) => {
-  const [relatedPosts, setRelatedPosts] = useState([])
+  const [relatedPosts, setRelatedPosts] = useState([] as PostType[])
 
   useEffect(() => {
     if (slug) {

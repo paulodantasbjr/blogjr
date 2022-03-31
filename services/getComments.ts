@@ -1,9 +1,10 @@
-import { gql, request } from 'graphql-request'
+import { request, gql } from 'graphql-request'
 
-const graphqlAPI =
-  'https://api-sa-east-1.graphcms.com/v2/cl10yafju1alq01z0dzltdtxa/master'
+import { GRAPHQLAPI } from '../utils/constants'
 
-export const getComments = async (slug) => {
+const graphqlAPI = GRAPHQLAPI
+
+export const getComments = async (slug: string) => {
   const query = gql`
     query getComments($slug: String!) {
       comments(where: { post: { slug: $slug } }) {

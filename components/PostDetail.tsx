@@ -2,9 +2,11 @@ import moment from 'moment'
 import Image from 'next/image'
 
 import { AiOutlineCalendar } from 'react-icons/ai'
+import { PostType } from '../types/Post'
+import { PostsType } from '../types/Posts'
 import { getContentFragment } from '../utils/getContentFragment'
 
-export const PostDetail = ({ post }) => {
+export const PostDetail = ({ post }: PostType[]) => {
   return (
     <div className="mb-8 rounded-lg bg-white pb-12 shadow-lg lg:p-8">
       <div className="relative mb-6 h-full w-full overflow-hidden shadow-md">
@@ -37,6 +39,7 @@ export const PostDetail = ({ post }) => {
           </div>
         </div>
         <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
+
         {post.content.raw.children.map((typeObj, index) => {
           const children = typeObj.children.map((item, itemindex) =>
             getContentFragment(itemindex, item.text, item)

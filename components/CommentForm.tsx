@@ -1,13 +1,19 @@
-import { useState, useEffect } from 'react'
+import { ChangeEvent, FormEvent, HTMLInputTypeAttribute } from 'react'
+import { useState } from 'react'
+
 import { setPostComment } from '../services/setPostComment'
 
-export const CommentForm = ({ slug }) => {
+import { SlugType } from '../types/Slug'
+
+export const CommentForm = ({ slug }: SlugType) => {
   const initialState = { name: '', email: '', comment: '' }
   const [commentData, setCommentData] = useState(initialState)
   const [error, setError] = useState(false)
   const [success, setSuccess] = useState(false)
 
-  const handleChangeInput = ({ target }) => {
+  const handleChangeInput = ({
+    target,
+  }: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     if (target.type === 'checkbox') {
       setCommentData((prev) => ({
         ...prev,
@@ -21,8 +27,8 @@ export const CommentForm = ({ slug }) => {
     }
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault()
 
     const { name, email, comment } = commentData
     if (!name || !email || !comment) {
